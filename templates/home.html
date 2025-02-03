@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jovian Careers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans mx-12 my-4">
+
+    <!-- Header Section -->
+    <header class="bg-blue-600 text-white py-4 rounded-lg">
+        <h2 class="text-3xl font-bold text-center">Jovian Careers</h2>
+    </header>
+    
+    <!-- Image Section -->
+    <div class="flex justify-center my-8 h-[600px]">
+        <img src="https://media.istockphoto.com/id/1363104923/photo/diverse-modern-office-businessman-leads-business-meeting-with-managers-talks-uses.jpg?s=612x612&w=0&k=20&c=R6-SufHacJ6bCnviq37kik2Jl6RMdECybcUpEoRuMLs=" 
+             alt="Join Our Team" 
+             class="rounded-lg shadow-lg w-full object-cover">
+    </div>
+    <!-- About Section -->
+    <section class="px-8 py-12">
+        <h1 class="text-2xl font-semibold text-blue-700 text-center">About Jovian</h1>
+        <p class="mt-4 text-lg text-gray-700">
+            Jovian is a leading tech company dedicated to providing innovative solutions that empower businesses to thrive in the digital age. 
+            Specializing in custom software development, cloud computing, data analytics, and emerging technologies like AI and blockchain, 
+            we deliver tailored services that meet the unique needs of our clients. With a team of skilled engineers and designers, we work closely 
+            with businesses to create scalable, secure, and efficient digital products. Our agile approach ensures timely delivery, seamless 
+            collaboration, and a strong focus on quality, helping organizations optimize operations and drive success.
+        </p>
+    </section>
+
+    <!-- Open Positions Section -->
+    <section class="px-8 py-12 bg-gray-100 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-semibold text-blue-700 text-center">Open Positions</h1>
+        
+        <div class="mt-4 space-y-4">
+            {% for job in jobs %}
+            {% include 'jobitem.html' %}
+            {% endfor %}
+        </div>
+    </section>
+    
+    <!-- Contact Us Section    -->
+    <div class="flex justify-center mt-8 mb-5">
+        <button class="bg-blue-600 text-white py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition duration-300">
+            Contact Us
+        </button>
+    </div>
+    
+
+
+</body>
+</html>
