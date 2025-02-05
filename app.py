@@ -40,9 +40,9 @@ def helloworld():
     jobs=load_jobs_from_db()
     return render_template('home.html',jobs=jobs)
 
-@app.route("/api/jobs")
+@app.route("/jobs/<id>")
 def job_listing():
-    jobs=load_jobs_from_db()
+    jobs=load_jobs_from_db(id)
     return render_template('jobpage.html',jobs=jobs)
 
 if __name__=="__main__":
