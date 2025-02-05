@@ -43,7 +43,6 @@ def helloworld():
 @app.route("/api/jobs")
 def job_listing():
     jobs=load_jobs_from_db()
-
     return jsonify(jobs)
 
 if __name__=="__main__":
