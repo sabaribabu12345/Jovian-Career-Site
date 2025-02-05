@@ -43,7 +43,7 @@ def helloworld():
 @app.route("/api/jobs")
 def job_listing():
     jobs=load_jobs_from_db()
-    return jsonify(jobs)
+    return render_template('jobpage.html',jobs=jobs)
 
 if __name__=="__main__":
     app.run(host='0.0.0.0',port=5001,debug=True)
