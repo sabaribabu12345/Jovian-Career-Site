@@ -35,6 +35,14 @@ def load_jobs_from_db():
         for row in result_all:
             jobs.append(dict(row._mapping)) 
         return jobs
+def load_jobs_from_db(id):
+        with engine.connect() as conn:
+            result = conn.execute(text("SELECT * FROM jobs WHERE id=:id"),id=id)
+            jobs = []
+            result_all = result.fetchall()
+            for row in result_all:
+                jobs.append(dict(row._mapping)) 
+            return jobs
 @app.route("/")
 def helloworld():
     jobs=load_jobs_from_db()
